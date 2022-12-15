@@ -28,5 +28,12 @@ kubectl get gateway --namespace infra --watch
 
 ```sh
 curl -H "host: app1.domain.com" XXX.XXX.XXX.XXX
-curl -H "host: app2.domain.com" XXX.XXX.XXX.XXX
+```
+
+```sh
+curl -H "host: my.domain.com" -H "app: app1" 34.111.73.217
+```
+
+```sh
+curl -H "host: my.domain.com" 34.111.73.217/app1
 ```
