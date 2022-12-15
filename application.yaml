@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: k8s-gateway-api
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/nordineb/k8s-gateway-api
+    targetRevision: HEAD
+    path: ext-http-gateway
+  destination:
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=false
+    automated:
+      prune: true
+      selfHeal: true
